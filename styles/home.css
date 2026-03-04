@@ -27,7 +27,7 @@ a.pink-btn {
     top: calc(50% + 180px); /* 50% = centre vertical de la cover, +150-180px pour descendre sous la cover */
     left: 50%;
     transform: translateX(-50%);
-    background-color: #F62D83;
+    background-color: #f51375;
     color: #fff;
     padding: 0.75em 1.5em;
     border: none;
