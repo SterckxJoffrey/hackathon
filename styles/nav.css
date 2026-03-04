@@ -25,3 +25,7 @@
 .navbar a:hover {
   opacity: 0.8;
 }
+
+.navbar a.active {
+  color: #ff2e83; 
+}

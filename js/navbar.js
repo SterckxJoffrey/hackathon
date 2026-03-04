@@ -1,22 +1,14 @@
-// const navContainer = document.getElementById("nav");
+  const links = document.querySelectorAll('.navbar a');
 
-// fetch('pages/nav.html')
-//   .then(response => response.text())
-//   .then(data => {
-//     navContainer.innerHTML = data;
-    
-//     const sidenav = document.getElementById("mySidenav");
-//     const openBtn = document.getElementById("openBtn");
-//     const closeBtn = document.getElementById("closeBtn");
-    
-//     openBtn.onclick = (e) => {
-//       e.preventDefault();
-//       sidenav.classList.add("active");
-//       openBtn.classList.add("hidden");
-//     };
-//     closeBtn.onclick = (e) => {
-//       e.preventDefault();
-//       sidenav.classList.remove("active");
-//       openBtn.classList.remove("hidden");
-//     };
-//   });
+  // Récupère le nom du fichier de la page actuelle
+  const currentPage = window.location.pathname.split('/').pop(); // ex: "waiting.html"
+
+  links.forEach(link => {
+    // Récupère le href du lien
+    const linkPage = link.getAttribute('href');
+
+    // Si le href correspond au nom du fichier actuel
+    if (linkPage === currentPage) {
+      link.classList.add('active'); // ajoute la classe "active"
+    }
+  });
