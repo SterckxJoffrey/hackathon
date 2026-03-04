@@ -34,7 +34,7 @@ body {
 
   width: 50vw;
   height: 45vh;
-  top: 45%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 60px auto;
@@ -71,7 +71,7 @@ h1 {
 
 .social-container {
   position: absolute;
-  top: calc(45% + 330px);
+  top: calc(40% + 330px);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
