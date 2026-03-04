@@ -1,0 +1,30 @@
+/* Hero plein écran */
+.hero {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  position: relative;
+}
+
+/* Cercle vinyle XXL */
+.vinyl-wrapper {
+  width: 95vmin;          /* cercle responsive selon la plus petite dimension */
+  height: 90vmin;         /* égal à width → cercle parfait */
+  border-radius: 50%;     /* cercle parfait */
+  overflow: hidden;       /* découpe la vidéo en rond */
+  box-shadow: 0 0 80px rgba(186, 85, 211, 0.9); /* mauve fluo */
+  position: relative;
+}
+
+/* Vidéo toujours carrée dans le cercle */
+.vinyl-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* rempli le cercle sans déformation */
+  display: block;
+  border-radius: 50%; /* sécurité pour garantir le cercle */
+}

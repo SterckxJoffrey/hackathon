@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mes concerts</title>
+  <link rel="stylesheet" href="../styles/concert.css">
+</head>
+<body>
+
+  <!-- IMAGE DE FOND RESPONSIVE -->
+  <picture class="background">
+    <source srcset="../assets/img/collageFinal.png" media="(max-width: 768px)">
+    <source srcset="../assets/img/collageFinal.png" media="(min-width: 769px)">
+    <img src="../assets/img/collageFinal.png" alt="Background">
+  </picture>
+
+  <div class="overlay"></div>
+
+  <div class="app">
+    <h1>Mes concerts</h1>
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Recherche par ville/pays">
+    </div>
+
+    <div class="filter">
+      <button id="prevBtn"><</button>
+      <span id="filterLabel">TOUS</span>
+      <button id="nextBtn">></button>
+    </div>
+
+    <div id="concertsContainer"></div>
+  </div>
+
+  <script src="../js/concert.js"></script>
+</body>
+</html>

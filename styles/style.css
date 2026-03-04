@@ -3,3 +3,34 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+/* .vinyl {
+  position: absolute;
+  width: 50%;          
+  height: 50%;         
+  border-radius: 50%;
+  top: 20%;
+  left: 50%;           
+  transform: translateX(-50%);
+  background: #c2185b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center; 
+  animation: spin 4s linear infinite; 
+}
+
+.vinyl:before {
+  content: "";
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  background-image: url('/assets/img/pocket.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes spin {
+  0%   { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
+} */
