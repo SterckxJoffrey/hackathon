@@ -8,8 +8,20 @@
 }
 
 body {
+    background: url('../assets/img/background_1.png') no-repeat center center fixed;
+    background-size: cover;
     margin: 0 auto;
     height: 100vh;
+    background-color: var(--color-black);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transform: scale(.9);
 }
 
 .player-container {
@@ -21,8 +33,14 @@ body {
     max-width: 100%;
     width:100%;
     overflow: hidden; 
+    z-index: 20;
+    animation: fadeIn 3s ease-in-out;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 video {
     position: relative;
     padding: 0;
@@ -30,7 +48,6 @@ video {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: -5;
 }
 
 .play-button {
@@ -39,12 +56,13 @@ video {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem;
     color: var(--color-black);
     z-index: 5;
     cursor: pointer;
+    width: 20%;
+    height: auto;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.3);
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }

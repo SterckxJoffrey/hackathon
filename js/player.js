@@ -7,6 +7,7 @@ const films = [
     '../assets/video/film_2.mp4',
     '../assets/video/film_1.mp4'
 ];
+    
 let videos = []
 let startY = 0;
 let setDown;
@@ -16,6 +17,7 @@ let video_index = 0;
 init();
 
 function init() {
+    
     for (let i = films.length - 1; i >= 0; --i) {
         let video = document.createElement('video');
         video.classList.add('video');
