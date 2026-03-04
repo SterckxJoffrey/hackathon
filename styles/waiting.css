@@ -46,6 +46,7 @@ h1 span {
   transform-origin: center center; 
   animation: spin 2s linear infinite; 
     pointer-events: none;
+    
 }
 
 .vinyl:before {
@@ -83,6 +84,7 @@ h1 span {
   overflow-y: scroll;
   scrollbar-width: none; 
   -ms-overflow-style: none;
+    border: 3px solid white;
 
 }
 
