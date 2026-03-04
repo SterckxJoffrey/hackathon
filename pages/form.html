@@ -1,11 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="../styles/form.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="formulaire_accueil" id="choix">
+      <h1>Êtes-vous ?</h1>
+
+      <button class="button" onclick="showPro()">Professionnel(le)</button>
+      <button class="button" onclick="showParticulier()">
+        Particulier(ère)
+      </button>
+    </div>
+<!-- formulaire pro -->
+    <div id="formPro" style="display: none;">
+      <h2>Envoyer un message</h2>
+
+      <div class="form-row">
+        <input type="email" placeholder="Email" required />
+      </div>
+      <input type="text" placeholder="Entreprise" required />
+      <textarea placeholder="Votre message" rows="5" required></textarea>
+      <button>Envoyer</button>
+    </div>
+
+<!-- formulaire parti -->
+    <div id="formParticulier" style="display: none;"> 
+      <h2>Envoyer un message</h2>
+
+      <div class="form-row">
+        <input type="text" placeholder="Prenom" required />
+        <input type="email" placeholder="Email" required />
+      </div>
+      <textarea placeholder="Votre message" rows="5" required></textarea>
+      <button>Envoyer</button>
+    </div>
+
+    <script>
+      function showPro() {
+        document.getElementById("choix").style.display = "none";
+        document.getElementById("formPro").style.display = "block";
+      }
+
+      function showParticulier() {
+        document.getElementById("choix").style.display = "none";
+        document.getElementById("formParticulier").style.display = "block";
+      }
+    </script>
+  </body>
 </html>
