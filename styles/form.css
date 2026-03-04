@@ -1,0 +1,106 @@
+body{
+    background-color: black;
+
+}
+h1{
+  color: white;
+
+}
+.formulaire_accueil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  height: 350px;
+  width: 90vw;
+  max-width: 350px;
+  border: 2px solid white;
+  margin: 50px auto;
+  align-items: center;     
+  margin-top: 150px;
+  background: linear-gradient(to right, #6514A0, #DC3C62, #C94626, #D37432, #DCA13D 80%);
+  box-sizing: border-box;
+}
+
+
+.box h1 {
+  margin-bottom: 40px;
+}
+
+h2{
+  color: white;
+  width: 100%;
+}
+
+.button {
+  border: 2px solid white;
+  padding: 10px 10px;
+  border-radius: 25px;  
+  margin: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 200px;
+}
+
+#formPro,
+#formParticulier {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  
+  height: auto;
+  width: 90vw;
+  max-width: 400px;
+  border: 2px solid white;
+  margin: 50px auto;
+  align-items: stretch;     
+  margin-top: 150px;
+  color: white;
+  padding: 20px;
+  background: linear-gradient(to right, #6514A0, #DC3C62, #C94626, #D37432, #DCA13D 80%);
+  box-sizing: border-box;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  margin-bottom: 15px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 2px solid white;
+}
+
+#formPro button,
+#formParticulier button {
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 25px;  
+  margin: 0;
+  cursor: pointer;
+  text-align: center;
+  width: auto;
+  background-color: transparent;
+  color: white;
+}
