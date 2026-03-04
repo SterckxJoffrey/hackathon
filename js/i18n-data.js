@@ -1,4 +1,4 @@
-// translations.js
+
 const translations = {
     fr: {
         "about.title": "À propos",

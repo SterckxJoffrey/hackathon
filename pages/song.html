@@ -2,24 +2,28 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Vinyle TikTok Slider</title>
-  <link rel="stylesheet" href="/styles/style.css">
-  <link rel="stylesheet" href="/styles/song.css">
+  <title>Mes concerts</title>
+  <link rel="stylesheet" href="../styles/concert.css">
 </head>
 <body>
 
 
-<section class="hero">
-  <div class="vinyl-wrapper">
-    <video autoplay muted loop playsinline>
-      <source src="/assets/video/concert.mp4" type="video/mp4">
-      Votre navigateur ne supporte pas la vidéo.
-    </video>
+  <picture class="background">
+    <source srcset="../assets/img/collageFinal.png" media="(max-width: 768px)">
+    <source srcset="../assets/img/collageFinal.png" media="(min-width: 769px)">
+    <img src="../assets/img/collageFinal.png" alt="Background">
+  </picture>
 
+  <div class="overlay"></div>
+
+  <div class="app">
+    <h1>Mes musiques</h1>
+
+
+
+    <div id="songsContainer"></div>
   </div>
-</section>
 
-
-<script src="../js/song.js"></script>
+  <script src="../js/song.js"></script>
 </body>
 </html>

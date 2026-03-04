@@ -1,9 +1,4 @@
-// translate.js
-// ============================
-// Script de traduction dynamique
-// ============================
 
-// Fonction principale pour traduire la page
 function translatePage(lang) {
   const elements = document.querySelectorAll("[data-i18n]");
 
@@ -14,29 +9,29 @@ function translatePage(lang) {
     }
   });
 
-  // Mettre à jour l'attribut lang de <html>
+
   document.documentElement.setAttribute("lang", lang);
 
-  // Persister le choix utilisateur
+
   localStorage.setItem("preferredLang", lang);
 }
 
-// Fonction pour obtenir la langue à utiliser
+
 function getUserLanguage() {
   let lang = localStorage.getItem("preferredLang");
   
-  // Si aucune langue choisie, détecter la langue du navigateur
+
   if (!lang) {
-    lang = navigator.language.slice(0,2); // ex: "fr", "nl", "en"
+    lang = navigator.language.slice(0,2); 
     if (!translations[lang]) {
-      lang = "fr"; // Langue par défaut si non supportée
+      lang = "fr"; 
     }
   }
 
   return lang;
 }
 
-// Traduire la page au chargement
+
 document.addEventListener("DOMContentLoaded", () => {
   const lang = getUserLanguage();
   translatePage(lang);
