@@ -38,7 +38,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 60px auto;
-  padding: 20px 40px;
+  padding: 20px;
   background: linear-gradient(180deg, #ff2a7f, #ff0066);
   border: 3px solid white;
   border-radius: 25px;
