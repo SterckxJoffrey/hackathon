@@ -1,0 +1,90 @@
+body {
+    height: 100vh;
+    background-color: black;
+}
+.cover {
+    padding: 1em;
+    height: 55%;
+    width: 92%;
+    position: absolute;
+    top: 20%;
+
+}
+
+.combined-effect {
+  display: block;
+  opacity: 0.8;
+  will-change: transform, filter;
+  animation: blurAndShake 3s ease-in-out 3s infinite forwards; 
+}
+
+@keyframes blurAndShake {
+  0%   { transform: translateX(0); filter: blur(2px); }   
+  5%   { transform: translateX(-6px); filter: blur(4px); } 
+  10%  { transform: translateX(6px); filter: blur(4px); }
+  15%  { transform: translateX(-4px); filter: blur(4px); }
+  20%  { transform: translateX(4px); filter: blur(4px); }
+  25%  { transform: translateX(0); filter: blur(4px); }
+  100% { transform: translateX(0); filter: blur(4px); }   
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.2em;
+    width: 85%;
+    text-align: center;
+    opacity: 0; 
+    animation: showText 1s ease-in-out 3s forwards; 
+}
+
+.overlay-text p {
+    margin-top: -1.5em; 
+    line-height: 1.5; 
+}
+.overlay-text h1 {
+    position: relative;
+    top: -1em;     
+    right: 2em;   
+    margin: 0;    
+}
+
+@keyframes showText {
+    0% { opacity: 0; }
+    100% { opacity: 1; } 
+}
+
+
+/* .vinyl {
+  position: absolute;
+  width: 50%;          
+  height: 50%;         
+  border-radius: 50%;
+  top: 20%;
+  left: 50%;           
+  transform: translateX(-50%);
+  background: #c2185b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center; 
+  animation: spin 4s linear infinite; 
+}
+
+.vinyl:before {
+  content: "";
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  background-image: url('/assets/img/pocket.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes spin {
+  0%   { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
+} */
