@@ -89,6 +89,12 @@ h1 span {
 .spotify-app::-webkit-scrollbar {
   display: none;
 }
+.vinyl, .vinyl:before {
+    pointer-events: none;
+}
+.spotify-app {
+    z-index: 2;
+}
 
 
 #songsContainer iframe {
