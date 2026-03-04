@@ -5,10 +5,10 @@
     position: fixed;
     z-index: 1;
     top: 0;
-    right: -250px;
+    left: -250px;
     background-color: #e8e8e8;
     padding-top: 60px;
-    transition: right 0.5s ease;
+    transition: left 0.5s ease;
 }
 
 /* Sidenav menu links */
@@ -33,7 +33,7 @@
 
 /*Active class */
 .sidenav.active {
-    right: 0;
+    left: 0;
 }
 
 /* Close btn */
@@ -48,7 +48,7 @@
 #openBtn {
     position: fixed;
     top: 15px;
-    right: 15px;
+    left: 15px;
     z-index: 2;
     text-decoration: none;
 }
@@ -64,4 +64,24 @@
     height: 5px;
     background-color: black;
     margin: 6px 0;
+}
+
+/* Header */
+#nav {
+    width: 50%;               /* half the page width */
+    margin: 0;                /* align to left edge */
+    padding: 30px 30px;
+    box-sizing: border-box;
+    background-color: #E85454;
+    /* no clipping — navbar covers its own half */
+    border: 4px solid #FFD700;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
