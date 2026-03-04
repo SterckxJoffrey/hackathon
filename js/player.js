@@ -3,40 +3,87 @@ const player_container = document.querySelector('.player-container');
 const player_button = document.querySelector('.player-container .play-button');
 const resume = document.querySelector('.resume-panel');
 const films = [
-    '../assets/video/film_1.mp4',
+    '../assets/video/film_3.mp4',
     '../assets/video/film_2.mp4',
-    '../assets/video/film_3.mp4'
+    '../assets/video/film_1.mp4'
 ];
+let videos = []
+let startY = 0;
 let setDown;
 let current_video;
-let video = [];
-player_button.textContent = "Play";
+let video_index = 0;
+
+init();
 
 function init() {
-    current_video.pause();
-    current_video.currentTime = 0;
-    player_button.textContent = 'Play';
-}
-
-for (let i = 0; i < 1; i++) {
-    video[i] = document.createElement('video');
-    video[i].classList.add('video');
-    video[i].setAttribute('loop', '');
-    video[i].setAttribute('src', films[i]);
-    video[i].style.zIndex = i;
-    player_container.appendChild(video[i]);
-}
-
-current_video = video.pop();
-current_video.pause();
-
-document.onkeydown = (event) => {
-    if (event.key === 'Enter') {
-        video.unshift(current_video);
-        current_video = video.pop();
-        current_video.pause();
-        current_video.currentTime = 0;
+    for (let i = films.length - 1; i >= 0; --i) {
+        let video = document.createElement('video');
+        video.classList.add('video');
+        video.setAttribute('loop', '');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('preload', 'metadata');
+        video.setAttribute('src', films[i]);
+        player_container.appendChild(video);
+        videos.push(video);
+        console.log(video);
     }
+    updateVideo();
+
+    player_button.setAttribute('src', '../assets/img/play.svg');
+}
+
+player_container.addEventListener('touchstart', (event) => {
+    event.stopPropagation();
+    startY = event.touches[0].clientY;
+});
+
+player_container.addEventListener('touchend', (event) => {
+    event.stopPropagation();
+    let endY = event.changedTouches[0].clientY;
+    let diff = endY - startY;
+    
+    if (diff < -50) {   
+            console.log('swiped up');
+            nextVideo();
+    } else if (diff > 50) {
+            console.log('swiped down');
+            previousVideo();
+    }
+});
+
+function nextVideo() {
+    if (!videos.length) return;
+    video_index = (video_index + 1) % videos.length;    
+    
+    updateVideo();
+}
+
+function previousVideo() {
+    if (!videos.length) return;
+    video_index = (video_index - 1 + videos.length) % videos.length;
+        
+    updateVideo();
+}
+
+function updateVideo() {
+    videos.forEach((video, idx) => {
+        console.log(idx, video_index);
+                
+        if (idx == video_index) {
+            video.style.display = 'block';
+            video.style.transform = 'translateY(0)';
+            video.style.zIndex = '1';
+            current_video = video;
+            video.pause();
+            player_button.setAttribute('src', '../assets/img/play.svg');
+
+        } else {
+            video.style.display = 'none';
+            video.style.transform = 'translateY(100%)';
+            video.style.zIndex = '-1';
+        }
+       
+    });
 }
 
 player_container.addEventListener('click', (event) => {
@@ -46,15 +93,15 @@ player_container.addEventListener('click', (event) => {
 
 player_button.addEventListener('click', (event) => {
     event.stopPropagation();
-    action = player_button.textContent.toLowerCase();
+    action = player_button.getAttribute('src').includes('play') ? 'play' : 'pause';
     switch (action) {
         case 'play':
             current_video.play();
-            player_button.textContent = 'Pause';
+            player_button.setAttribute('src', '../assets/img/pause.svg');
             break;
         case 'pause':
             current_video.pause();
-            player_button.textContent = 'Play';
+            player_button.setAttribute('src', '../assets/img/play.svg');
             break;
     }
     
@@ -63,7 +110,8 @@ player_button.addEventListener('click', (event) => {
 
 resume.addEventListener('click', (event) => {
     event.stopPropagation();
-    resume.classList.toggle('resume-panel-height');    
+    resume.classList.toggle('resume-panel-height');
+    resume.scrollTo(0, 0);    
 });
 
 function toggleFade(element) {
@@ -84,8 +132,3 @@ function hiddenPlayerCommand() {
     }, 4000);
 }
 
-next_btn.addEventListener('click', () => {
-   video.unshift(current_video);
-    current_video = video.pop();
-    init();
-});
