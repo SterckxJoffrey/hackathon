@@ -1,0 +1,105 @@
+body {
+    background-color: black;
+}
+
+.background {
+  position: fixed;
+  /* background-color: black; */
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+    object-fit: cover;
+  content: url('../assets/img/collageFinal.png'); 
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  content: url('../assets/img/collageFinal.png'); 
+}
+
+@media screen and (min-width: 1200px) {
+  .background  {
+    content: url('../assets/img/desktop.png'); 
+      top: 0;
+  }
+}
+
+
+.app {
+  position: absolute;
+
+  width: 50vw;
+  height: 45vh;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 60px auto;
+  padding: 20px 40px;
+  background: linear-gradient(180deg, #ff2a7f, #ff0066);
+  border: 3px solid white;
+  border-radius: 25px;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.app::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  font-family: cursive;
+  font-size: 24px;
+  /* margin-bottom: 20px; */
+  color: white;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
+.social-container {
+  position: absolute;
+  top: calc(45% + 330px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #ff2e83, #ff0066);
+  padding: 20px 35px;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
