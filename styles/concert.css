@@ -10,19 +10,19 @@ body {
   height: 100%;
   z-index: -2;
     object-fit: cover;
-  content: url('../assets/img/collageFinal.png'); 
+  content: url('../assets/img/collageFinal.webp'); 
 }
 
 .background {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  content: url('../assets/img/collageFinal.png'); 
+  content: url('../assets/img/collageFinal.webp'); 
 }
 
 @media screen and (min-width: 1200px) {
   .background  {
-    content: url('../assets/img/desktop.png'); 
+    content: url('../assets/img/desktop.webp'); 
       top: 0;
   }
 }
@@ -85,7 +85,7 @@ input {
   margin-bottom: 10px;
 }
 
-/* FILTRE */
+
 .filter {
   display: flex;
   justify-content: center;
@@ -104,7 +104,7 @@ input {
   cursor: pointer;
 }
 
-/* LISTE */
+
 .concert {
   padding: 25px 10px;
   border: 1px solid rgba(255,255,255,0.4);

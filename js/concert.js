@@ -7,12 +7,6 @@ const concerts = [
   { city: "Marseille", country: "France", venue: "La Makeda", date: "2026-09-03" },
   { city: "Berlin", country: "Allemagne", venue: "Gretchen", date: "2026-10-17" },
   { city: "Niort", country: "France", venue: "Espace René Cassin", date: "2026-10-29" },
-  { city: "Paris", country: "France", venue: "Studio de l’Ermitage", date: "2026-11-25" },
-  { city: "Saint-Avé", country: "France", venue: "L’Echova", date: "2026-08-05" },
-  { city: "Marseille", country: "France", venue: "La Makeda", date: "2026-09-03" },
-  { city: "Berlin", country: "Allemagne", venue: "Gretchen", date: "2026-10-17" },
-  { city: "Niort", country: "France", venue: "Espace René Cassin", date: "2026-10-29" },
-  { city: "Paris", country: "France", venue: "Studio de l’Ermitage", date: "2026-11-25" }
 ];
 
 const container = document.getElementById("concertsContainer");
