@@ -45,6 +45,7 @@ h1 span {
   justify-content: center;
   transform-origin: center center; 
   animation: spin 2s linear infinite; 
+    pointer-events: none;
 }
 
 .vinyl:before {
