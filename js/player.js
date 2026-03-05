@@ -31,7 +31,7 @@ function init() {
     }
     updateVideo();
 
-    player_button.setAttribute('src', '../assets/img/play.svg');
+    // player_button.setAttribute('src', '../assets/img/play.svg');
 }
 
 player_container.addEventListener('touchstart', (event) => {
@@ -76,10 +76,11 @@ function updateVideo() {
             video.style.transform = 'translateY(0)';
             video.style.zIndex = '1';
             current_video = video;
-            video.pause();
             player_button.setAttribute('src', '../assets/img/play.svg');
-
+            // toggleFade(player_button);
+            
         } else {
+            video.pause();
             video.style.display = 'none';
             video.style.transform = 'translateY(100%)';
             video.style.zIndex = '-1';
