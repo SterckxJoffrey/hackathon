@@ -6,3 +6,7 @@ LightHouse Home page
 LightHouse about page
 
 <img width="573" height="138" alt="Capture d’écran 2026-03-05 à 11 15 38" src="https://github.com/user-attachments/assets/5a65a976-88b0-40aa-bdd5-79fc75ebc7de" />
+
+W3c validation
+
+<img width="1419" height="462" alt="Capture d’écran 2026-03-05 à 11 17 15" src="https://github.com/user-attachments/assets/0229217a-aff0-472c-b7f4-95295cd47e7d" />
