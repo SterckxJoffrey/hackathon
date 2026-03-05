@@ -37,7 +37,7 @@
       </div>
       <input type="text" placeholder="Entreprise" required maxlength="150" minlength="5"/>
       <textarea placeholder="Votre message" rows="5" required minlength="20" maxlength="1000"></textarea>
-      <button onclick="showsend()">Envoyer</button>
+      <button class="button" onclick="showsend()">Envoyer</button>
     </div>
 
     <div id="formParticulier" style="display: none">
@@ -48,14 +48,14 @@
         <input type="email" placeholder="Email" required maxlength="150" />
       </div>
       <textarea placeholder="Votre message" rows="5" required></textarea>
-      <button onclick="showsend()">Envoyer</button>
+      <button class="button" onclick="showsend()">Envoyer</button>
     </div>
 
     <div id="FormSend" style="display: none;">
-      <h3 class="send"> Message envoyé ✓</h3>
+      <h3 class="send"> Message envoyé </h3>
  
       <img src="../assets/img/succes.gif" alt="people_cheering">
-      <button onclick="goBack()" style="border: 2px solid white; padding: 10px 20px; border-radius: 25px; cursor: pointer; background-color: transparent; color: white;">Retour</button>
+      <button class="button" onclick="goBack()" style="border: 2px solid white; padding: 10px 20px; border-radius: 25px; cursor: pointer; background-color: transparent; color: white;">Retour</button>
     </div>
     </main>
     <script src="../js/form.js"></script>
