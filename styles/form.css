@@ -63,7 +63,7 @@ h2{
  
 .button {
   border: 2px solid white;
-  color: var(--color-text-light);
+  color: var(--color-text-primary);
   padding: 10px 10px;
   border-radius: 25px;  
   margin: 10px;
@@ -71,7 +71,7 @@ h2{
   text-align: center;
   justify-content: center;
   width: 200px;
-  background-color: #DCA13D;
+  background-color: var(--color-text-light);
 }
  
 #formPro,
