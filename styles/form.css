@@ -29,7 +29,7 @@ body{
 }
  
 h1{
-  color: white;
+  color: var(--color-text-light);
  
 }
  
@@ -41,14 +41,15 @@ h1{
   height: 380px;
   width: 90vw;
   max-width: 350px;
-      border: 3px solid white;
+  border: 3px solid var(--color-text-light);
   border-radius: 25px;
   margin: 50px auto;
   align-items: center;    
   /* margin-top: 150px; */
   margin-top: 300px;
-  background: #F62D83;
+  background: var(--color-text-primary);
   box-sizing: border-box;
+  
 }
  
  
@@ -57,12 +58,12 @@ h1{
 }
  
 h2{
-  color: white;
+  color: var(--color-text-light);
   width: 100%;
 }
  
 .button {
-  border: 2px solid white;
+  border: 2px solid var(--color-text-light);
   color: var(--color-text-primary);
   padding: 10px 10px;
   border-radius: 25px;  
@@ -80,14 +81,14 @@ h2{
   height: 480px;
   width: 90vw;
   max-width: 400px;
-      border: 3px solid white;
+  border: 3px solid var(--color-text-light);
   border-radius: 25px;
   margin: 50px auto;
   align-items: stretch;    
   margin-top: 250px;
-  color: white;
+  color: var(--color-text-primary);
   padding: 20px;
-  background: #F62D83;
+  background: var(--color-bg-primary);
   box-sizing: border-box;
 }
  
@@ -101,9 +102,9 @@ h2{
 input,
 textarea{
   padding: 10px;
-  border: 1px solid white;
-  background-color: #fff;
-  color: black;
+  border: 1px solid var(--color-text-primary);
+  background-color: var(--color-text-light);
+  color: var(--color-bg-secondary);
   margin-bottom: 15px;
   font-size: 14px;
   width: 100%;
@@ -113,28 +114,27 @@ textarea{
  
 input::placeholder,
 textarea::placeholder {
-  color: black;
+  color: var(--color-bg-secondary);
 }
  
 input:focus,
 textarea:focus {
   outline: none;
-  border: 2px solid white;
-  color: black;
+  border: 2px solid var(--color-text-light);
+  color: var(--color-bg-secondary);
+  background-color: var(--color-text-light);
 }
  
 #formPro button,
 #formParticulier button{
-      border: 3px solid white;
-  border-radius: 25px;
   padding: 10px 20px;
-  border-radius: 25px;  
   margin: 0;
+  border-radius: 25px;
   cursor: pointer;
   text-align: center;
   width: auto;
-  background-color: transparent;
-  color: white;
+  color: var(--color-bg-secondary);
+  background-color: #FFB902;
 }
 .send{
   color: greenyellow;
@@ -161,11 +161,11 @@ textarea:focus {
   width: 90vw;
   max-width: 450px;
   height: 500px;
-        border: 3px solid white;
+  border: 3px solid var(--color-text-light);
   border-radius: 25px;
-  color: white;
+  color: var(--color-text-light);
   padding: 20px;
-  background: #F62D83;
+  background: var(--color-text-primary);
 }
  
 #FormSend img {
