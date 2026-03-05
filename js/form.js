@@ -51,10 +51,10 @@
         document.getElementById('FormSend').style.display = 'flex';
       }
  
-      function goBack() {
-        document.getElementById('FormSend').style.display = 'none';
-        document.getElementById('choix').style.display = 'flex';
+    //   function goBack() {
+    //     document.getElementById('FormSend').style.display = 'none';
+    //     document.getElementById('choix').style.display = 'flex';
  
-        document.getElementById('formPro').reset();
-        document.getElementById('formParticulier').reset();
-      }
+    //     document.getElementById('formPro').reset();
+    //     document.getElementById('formParticulier').reset();
+    //   }
