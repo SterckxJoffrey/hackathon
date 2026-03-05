@@ -1,68 +1,65 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <link rel="stylesheet" href="../styles/form.css" />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-        <link rel="stylesheet" href="../styles/nav.css">
+    <title>Formulaire de contact</title>
+        <link rel="stylesheet" href="../styles/style.css" />
+            <link rel="stylesheet" href="../styles/form.css" />
+        <link rel="stylesheet" href="../styles/nav.css" />
   </head>
   <body>
-        <header id="nav">
-    <header>
-    <nav class="navbar">
+        <div class="background"></div>
+        <header>
+        <nav class="navbar">
   <a href="about.html">À propos</a>
   <a href="waiting.html">Musiques</a>
   <a href="concert.html">Concerts</a>
   <a href="form.html">Contact</a>
 </nav>
-    </header> 
-
     </header>
+    <main>
     <div class="formulaire_accueil" id="choix">
       <h1>Êtes-vous ?</h1>
-
+ 
       <button class="button" onclick="showPro()">Professionnel(le)</button>
       <button class="button" onclick="showParticulier()">
         Particulier(ère)
       </button>
     </div>
-<!-- formulaire pro -->
+
     <div id="formPro" style="display: none;">
       <h2>Envoyer un message</h2>
-
-      <div class="form-row">
-        <input type="email" placeholder="Email" required />
+ 
+      <div class="form_row">
+        <input type="email" placeholder="Email" required maxlength="150" minlength="10" />
       </div>
-      <input type="text" placeholder="Entreprise" required />
-      <textarea placeholder="Votre message" rows="5" required></textarea>
-      <button>Envoyer</button>
+      <input type="text" placeholder="Entreprise" required maxlength="150" minlength="5"/>
+      <textarea placeholder="Votre message" rows="5" required minlength="20" maxlength="1000"></textarea>
+      <button onclick="showsend()">Envoyer</button>
     </div>
 
-<!-- formulaire parti -->
-    <div id="formParticulier" style="display: none;"> 
+    <div id="formParticulier" style="display: none">
       <h2>Envoyer un message</h2>
-
-      <div class="form-row">
-        <input type="text" placeholder="Prenom" required />
-        <input type="email" placeholder="Email" required />
+ 
+      <div class="form_row">
+        <input type="text" placeholder="Nom" required maxlength="100" />
+        <input type="email" placeholder="Email" required maxlength="150" />
       </div>
       <textarea placeholder="Votre message" rows="5" required></textarea>
-      <button>Envoyer</button>
+      <button onclick="showsend()">Envoyer</button>
     </div>
 
+    <div id="FormSend" style="display: none;">
+      <h3 class="send"> Message envoyé ✓</h3>
+ 
+      <img src="../assets/img/succes.gif" alt="people_cheering">
+      <button onclick="goBack()" style="border: 2px solid white; padding: 10px 20px; border-radius: 25px; cursor: pointer; background-color: transparent; color: white;">Retour</button>
+    </div>
+    </main>
+    <script src="../js/form.js"></script>
         <script src="../js/navbar.js"></script>
-
-    <script>
-      function showPro() {
-        document.getElementById("choix").style.display = "none";
-        document.getElementById("formPro").style.display = "block";
-      }
-
-      function showParticulier() {
-        document.getElementById("choix").style.display = "none";
-        document.getElementById("formParticulier").style.display = "block";
-      }
-    </script>
   </body>
 </html>
+ 
