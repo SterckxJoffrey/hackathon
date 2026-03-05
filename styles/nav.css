@@ -14,7 +14,7 @@
 }
 
 .navbar a {
-  color: white;
+  color: var(--color-text-light);
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
@@ -27,5 +27,5 @@
 }
 
 .navbar a.active {
-  color: #ff2e83; 
+  color: var(--color-text-primary); 
 }
