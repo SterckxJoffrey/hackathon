@@ -29,29 +29,65 @@ function init() {
         videos.push(video);
         console.log(video);
     }
+    
     updateVideo();
+    
+    player_container.addEventListener('touchstart', (event) => {
+        event.preventDefault();
+        startY = event.touches[0].clientY;
+    });
+    
+    player_container.addEventListener('touchend', (event) => {
+        event.preventDefault();
+        let endY = event.changedTouches[0].clientY;
+        let diff = endY - startY;
+        
+        if (diff < -50) {   
+                console.log('swiped up');
+                nextVideo();
+        } else if (diff > 50) {
+                console.log('swiped down');
+                previousVideo();
+        }
+    });
 
-    // player_button.setAttribute('src', '../assets/img/play.svg');
+    player_container.addEventListener('pointerdown', (event) => {
+        event.preventDefault();
+        setTimeout(() => {  
+            if (player_button.classList.contains('fade-out')) {
+                hiddenPlayerCommand();
+            }
+        }, 4000);
+    });
+
+    player_button.addEventListener('pointerdown', (event) => {
+        event.preventDefault();
+        action = player_button.getAttribute('src').includes('play') ? 'play' : 'pause';
+        switch (action) {
+            case 'play':
+                current_video.play();
+                player_button.setAttribute('src', '../assets/img/pause.svg');
+                break;
+            case 'pause':
+                current_video.pause();
+                player_button.setAttribute('src', '../assets/img/play.svg');
+                break;
+        }
+            
+        hiddenPlayerCommand();
+    });
+
+    resume.addEventListener('pointerdown', (event) => {
+        event.preventDefault();
+        resume.classList.toggle('resume-panel-height');
+        resume.scrollTo(0, 0);    
+    });
+
+
+    console.log(current_video);
+
 }
 
-player_container.addEventListener('touchstart', (event) => {
-    event.stopPropagation();
-    startY = event.touches[0].clientY;
-});
-
-player_container.addEventListener('touchend', (event) => {
-    event.stopPropagation();
-    let endY = event.changedTouches[0].clientY;
-    let diff = endY - startY;
-    
-    if (diff < -50) {   
-            console.log('swiped up');
-            nextVideo();
-    } else if (diff > 50) {
-            console.log('swiped down');
-            previousVideo();
-    }
-});
 
 function nextVideo() {
     if (!videos.length) return;
@@ -77,7 +113,6 @@ function updateVideo() {
             video.style.zIndex = '1';
             current_video = video;
             player_button.setAttribute('src', '../assets/img/play.svg');
-            // toggleFade(player_button);
             
         } else {
             video.pause();
@@ -85,46 +120,10 @@ function updateVideo() {
             video.style.transform = 'translateY(100%)';
             video.style.zIndex = '-1';
         }
+
+        // hiddenPlayerCommand();
        
     });
-}
-
-player_container.addEventListener('click', (event) => {
-    event.stopPropagation();
-    toggleFade(player_button);
-});
-
-player_button.addEventListener('click', (event) => {
-    event.stopPropagation();
-    action = player_button.getAttribute('src').includes('play') ? 'play' : 'pause';
-    switch (action) {
-        case 'play':
-            current_video.play();
-            player_button.setAttribute('src', '../assets/img/pause.svg');
-            break;
-        case 'pause':
-            current_video.pause();
-            player_button.setAttribute('src', '../assets/img/play.svg');
-            break;
-    }
-    
-    hiddenPlayerCommand();
-});
-
-resume.addEventListener('click', (event) => {
-    event.stopPropagation();
-    resume.classList.toggle('resume-panel-height');
-    resume.scrollTo(0, 0);    
-});
-
-function toggleFade(element) {
-    if (!element.classList.contains('fade-out')) {
-        element.classList.toggle('fade-out');
-    } else {
-        element.classList.toggle('fade-out');
-        
-        hiddenPlayerCommand();
-    }
 }
 
 function hiddenPlayerCommand() {
